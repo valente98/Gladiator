@@ -19,14 +19,12 @@ def attack(attacker, defender):
     else:
         defender['health'] -= damage_dealt
         attacker['rage'] += 15
-    return attacker, defender
 
 
 def heal(gladiator):
     if gladiator['rage'] >= 10:
         gladiator['rage'] = max(gladiator['rage'] - 10, 0)
         gladiator['health'] = min(gladiator['health'] + 5, 100)
-        return gladiator
 
 
 def is_dead(gladiator):
