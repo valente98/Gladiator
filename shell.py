@@ -35,8 +35,7 @@ def main():
         if choice.lower() == 'attack':
             core.attack(gladiator_one, gladiator_two)
             if core.is_dead(gladiator_two):
-                print('Gladiator 1 wins')
-                print('Gladiator 2 looses')
+                print('K.O. gladiator 1 wins')
                 break
         elif choice.lower() == 'quit':
             print('Gladiator 1 looses')
@@ -51,18 +50,19 @@ def main():
         Gladiators1_details(gladiator_one)
         Gladiators2_details(gladiator_two)
         choice = gladiator_choice('2')
-        if choice.lower() == 'quit':
+        if choice.lower() == 'attack':
+            core.attack(gladiator_two, gladiator_one)
+            if core.is_dead(gladiator_one):
+                print('K.O. gladiator 2 wins')
+                break
+        elif choice.lower() == 'quit':
             print('Gladiator 2 looses')
             print('Gladiator 1 wins')
             exit()
-        elif choice.lower() == 'attack':
-            core.attack(gladiator_two, gladiator_one)
-            if core.is_dead(gladiator_one):
-                print('Gladiator 1 looses')
-                print('Gladiator 2 wins')
-                break
         elif choice.lower() == 'heal':
             core.heal(gladiator_two)
+        elif choice.lower() == 'pass':
+            print('gladiator 2 pass')
         else:
             print('Invalid choice.')
         Gladiators1_details(gladiator_one)
