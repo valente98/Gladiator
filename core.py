@@ -32,3 +32,7 @@ def is_dead(gladiator):
         return True
     else:
         return False
+
+
+def pass_rage(gladiator):
+    gladiator['rage'] += 30
