@@ -33,3 +33,8 @@ def test_attack():
     core.attack(attacker, defender)
     assert attacker['rage'] == 0
     assert defender['health'] == 20
+
+
+def test_pass_rage():
+    gladiator = {'rage': 0, 'health': 60}
+    assert core.pass_rage(gladiator) == None
