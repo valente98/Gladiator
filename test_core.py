@@ -47,3 +47,8 @@ def test_punch():
     assert defender['health'] == 55
     assert attacker['rage'] == 0
     assert attacker['health'] == 25
+    attacker = {'health': 75, 'rage': 0, 'damage_low': 10, 'damage_high': 10}
+    defender = {'health': 75, 'rage': 0, 'damage_low': 10, 'damage_high': 10}
+    core.punch(attacker, defender)
+    assert attacker['rage'] == 0
+    assert defender['health'] == 65
