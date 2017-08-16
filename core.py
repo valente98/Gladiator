@@ -14,7 +14,7 @@ def new_gladiator(health, rage, damage_low, damage_high):
 def attack(attacker, defender):
     damage_dealt = randint(attacker['damage_low'], attacker['damage_high'])
     if randint(1, 100) <= attacker['rage']:
-        defender['health'] = (2 * damage_dealt)
+        defender['health'] -= (2 * damage_dealt)
         attacker['rage'] = 0
     else:
         defender['health'] -= damage_dealt
@@ -36,3 +36,15 @@ def is_dead(gladiator):
 
 def pass_rage(gladiator):
     gladiator['rage'] += 30
+
+
+def punch(attacker, defender):
+    super_punch = attacker['damage_high']
+    low_punch = attacker['damage_low']
+    if randint(1, 100) <= attacker['rage']:
+        defender['health'] -= (2 * super_punch)
+        attacker['rage'] = 0
+        attacker['health'] = attacker['health'] * .5
+    else:
+        defender['health'] -= low_punch
+        attacker['rage'] = 0
