@@ -44,6 +44,7 @@ def main():
         elif choice.lower() == 'heal':
             core.heal(gladiator_one)
         elif choice.lower() == 'pass':
+            core.pass_rage(gladiator_one)
             print('gladiator 1 pass')
         else:
             print('Invalid choice.')
@@ -62,6 +63,7 @@ def main():
         elif choice.lower() == 'heal':
             core.heal(gladiator_two)
         elif choice.lower() == 'pass':
+            core.pass_rage(gladiator_two)
             print('gladiator 2 pass')
         else:
             print('Invalid choice.')
