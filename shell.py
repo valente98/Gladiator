@@ -22,6 +22,7 @@ def gladiator_choice(n):
     \t- pass\n
     \t- quit\n
     \t- heal\n
+    \t- power punch\n
     '''.format(n)
     return input(s)
 
@@ -46,6 +47,11 @@ def main():
         elif choice.lower() == 'pass':
             core.pass_rage(gladiator_one)
             print('gladiator 1 pass')
+        elif choice.lower() == 'power punch':
+            core.punch(gladiator_one, gladiator_two)
+            if core.is_dead(gladiator_two):
+                print('K.O. gladiator 1 wins')
+                break
         else:
             print('Invalid choice.')
         Gladiators1_details(gladiator_one)
@@ -65,6 +71,11 @@ def main():
         elif choice.lower() == 'pass':
             core.pass_rage(gladiator_two)
             print('gladiator 2 pass')
+        elif choice.lower() == 'power punch':
+            core.punch(gladiator_two, gladiator_one)
+            if core.is_dead(gladiator_one):
+                print('K.O. gladiator 1 wins')
+                break
         else:
             print('Invalid choice.')
         Gladiators1_details(gladiator_one)
