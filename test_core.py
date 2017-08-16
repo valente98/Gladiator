@@ -32,9 +32,18 @@ def test_attack():
     defender = {'health': 65, 'rage': 100, 'damage_low': 10, 'damage_high': 10}
     core.attack(attacker, defender)
     assert attacker['rage'] == 0
-    assert defender['health'] == 20
+    assert defender['health'] == 45
 
 
 def test_pass_rage():
     gladiator = {'rage': 0, 'health': 60}
     assert core.pass_rage(gladiator) == None
+
+
+def test_punch():
+    attacker = {'health': 50, 'rage': 100, 'damage_low': 10, 'damage_high': 10}
+    defender = {'health': 75, 'rage': 100, 'damage_low': 10, 'damage_high': 10}
+    core.punch(attacker, defender)
+    assert defender['health'] == 55
+    assert attacker['rage'] == 0
+    assert attacker['health'] == 25
