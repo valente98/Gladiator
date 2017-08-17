@@ -40,14 +40,9 @@ def pass_rage(gladiator):
 
 def punch(attacker, defender):
     super_punch = attacker['damage_high']
-    low_punch = attacker['damage_low']
-    if randint(1, 100) <= attacker['rage']:
-        defender['health'] -= (2 * super_punch)
-        attacker['rage'] = 0
-        attacker['health'] = attacker['health'] * .5
-    else:
-        defender['health'] -= low_punch
-        attacker['rage'] = 0
+    defender['health'] -= super_punch
+    attacker['health'] -= attacker['health'] * .5
+    attacker['rage'] = 0
 
 
 def supe_heal(gladiator):
