@@ -18,12 +18,12 @@ def Gladiators2_details(gladiator_two):
 
 def gladiator_choice(n):
     s = '''Gladiator {}... What would you like to do?\n
-    \t- attack\n
-    \t- pass\n
-    \t- quit\n
-    \t- heal\n
-    \t- super heal (only use if you have 30 percent or more rage)\n
-    \t- power punch\n
+    \t-1. attack\n
+    \t-2. pass\n
+    \t-3. quit\n
+    \t-4. heal\n
+    \t-5. super heal\n
+    \t-6. power punch\n
     '''.format(n)
     return input(s)
 
@@ -34,23 +34,23 @@ def main():
     gladiator_two = core.new_gladiator(100, 0, 5, 30)
     while True:
         choice = gladiator_choice('1')
-        if choice.lower() == 'attack':
+        if choice.lower() == '1':
             core.attack(gladiator_one, gladiator_two)
             if core.is_dead(gladiator_two):
                 print('K.O. gladiator 1 wins')
                 break
-        elif choice.lower() == 'quit':
+        elif choice.lower() == '3':
             print('Gladiator 1 looses')
             print('Gladiator 2 wins')
             exit()
-        elif choice.lower() == 'heal':
+        elif choice.lower() == '4':
             core.heal(gladiator_one)
-        elif choice.lower() == 'super heal':
+        elif choice.lower() == '5':
             core.supe_heal(gladiator_one)
-        elif choice.lower() == 'pass':
+        elif choice.lower() == '2':
             core.pass_rage(gladiator_one)
             print('gladiator 1 pass')
-        elif choice.lower() == 'power punch':
+        elif choice.lower() == '6':
             core.punch(gladiator_one, gladiator_two)
             if core.is_dead(gladiator_two):
                 print('K.O. gladiator 1 wins')
@@ -60,23 +60,23 @@ def main():
         Gladiators1_details(gladiator_one)
         Gladiators2_details(gladiator_two)
         choice = gladiator_choice('2')
-        if choice.lower() == 'attack':
+        if choice.lower() == '1':
             core.attack(gladiator_two, gladiator_one)
             if core.is_dead(gladiator_one):
                 print('K.O. gladiator 2 wins')
                 break
-        elif choice.lower() == 'quit':
+        elif choice.lower() == '3':
             print('Gladiator 2 looses')
             print('Gladiator 1 wins')
             exit()
-        elif choice.lower() == 'heal':
+        elif choice.lower() == '4':
             core.heal(gladiator_two)
-        elif choice.lower() == 'super heal':
+        elif choice.lower() == '5':
             core.supe_heal(gladiator_one)
-        elif choice.lower() == 'pass':
+        elif choice.lower() == '2':
             core.pass_rage(gladiator_two)
             print('gladiator 2 pass')
-        elif choice.lower() == 'power punch':
+        elif choice.lower() == '6':
             core.punch(gladiator_two, gladiator_one)
             if core.is_dead(gladiator_one):
                 print('K.O. gladiator 1 wins')
