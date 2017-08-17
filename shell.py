@@ -46,7 +46,12 @@ def main():
         elif choice.lower() == '4':
             core.heal(gladiator_one)
         elif choice.lower() == '5':
-            core.supe_heal(gladiator_one)
+            if core.supe_heal(gladiator_one):
+                print('you have succesfully heal.\n')
+            else:
+                print(
+                    'Sorry you do not enough rage. you need 30 or more to complete super heal.\n'
+                )
         elif choice.lower() == '2':
             core.pass_rage(gladiator_one)
             print('gladiator 1 pass')
@@ -72,7 +77,12 @@ def main():
         elif choice.lower() == '4':
             core.heal(gladiator_two)
         elif choice.lower() == '5':
-            core.supe_heal(gladiator_one)
+            if core.supe_heal(gladiator_one):
+                print('you have succesfully heal.\n')
+            else:
+                print(
+                    'Sorry you do not enough rage. you need 30 or more to complete super heal.\n'
+                )
         elif choice.lower() == '2':
             core.pass_rage(gladiator_two)
             print('gladiator 2 pass')
@@ -82,7 +92,7 @@ def main():
                 print('K.O. gladiator 1 wins')
                 break
         else:
-            print('Invalid choice.')
+            print('Invalid choice.\n')
         Gladiators1_details(gladiator_one)
         Gladiators2_details(gladiator_two)
 
