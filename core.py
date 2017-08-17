@@ -48,3 +48,9 @@ def punch(attacker, defender):
     else:
         defender['health'] -= low_punch
         attacker['rage'] = 0
+
+
+def supe_heal(gladiator):
+    if gladiator['health'] <= 100 and gladiator['rage'] >= 30:
+        gladiator['health'] += 20
+        gladiator['rage'] = 0
