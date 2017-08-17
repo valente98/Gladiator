@@ -22,6 +22,7 @@ def gladiator_choice(n):
     \t- pass\n
     \t- quit\n
     \t- heal\n
+    \t- super heal (only use if you have 30 percent or more rage)\n
     \t- power punch\n
     '''.format(n)
     return input(s)
@@ -44,6 +45,8 @@ def main():
             exit()
         elif choice.lower() == 'heal':
             core.heal(gladiator_one)
+        elif choice.lower() == 'super heal':
+            core.supe_heal(gladiator_one)
         elif choice.lower() == 'pass':
             core.pass_rage(gladiator_one)
             print('gladiator 1 pass')
@@ -68,6 +71,8 @@ def main():
             exit()
         elif choice.lower() == 'heal':
             core.heal(gladiator_two)
+        elif choice.lower() == 'super heal':
+            core.supe_heal(gladiator_one)
         elif choice.lower() == 'pass':
             core.pass_rage(gladiator_two)
             print('gladiator 2 pass')
