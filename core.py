@@ -40,7 +40,7 @@ def pass_rage(gladiator):
 
 def punch(attacker, defender):
     super_punch = attacker['damage_high']
-    defender['health'] -= super_punch
+    defender['health'] -= super_punch * 2
     attacker['health'] -= attacker['health'] * .5
     attacker['rage'] = 0
 
