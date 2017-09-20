@@ -3,7 +3,7 @@ import core
 
 def Gladiator_start():
     print('Gladiator 1: 100 HP ||| 0 rage.. Low damage: 12, High damage: 20')
-    print('gladiator 2: 100 HP ||| 0 rage.. Low damage: 5, High damage: 30')
+    print('Gladiator 2: 100 HP ||| 0 rage.. Low damage: 5, High damage: 30')
 
 
 def Gladiators1_details(gladiator_one):
