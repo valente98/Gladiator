@@ -51,7 +51,7 @@ def test_punch():
     defender = {'health': 75, 'rage': 0, 'damage_low': 10, 'damage_high': 10}
     core.punch(attacker, defender)
     assert attacker['rage'] == 0
-    assert defender['health'] == 65
+    assert defender['health'] == 55
 
 
 def test_supe_heal():
